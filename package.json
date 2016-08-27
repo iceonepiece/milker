@@ -1,0 +1,22 @@
+{
+  "name": "milker",
+  "version": "1.0.0",
+  "description": "High performance matrix library for Node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/storylog/milker.git"
+  },
+  "keywords": [
+    "matrix"
+  ],
+  "author": "Jaratrawee Deekhueankhan <ice@storylog.co>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/storylog/milker/issues"
+  },
+  "homepage": "https://github.com/storylog/milker#readme"
+}
