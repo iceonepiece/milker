@@ -52,6 +52,20 @@ describe('Matrix', function(){
 
   });
 
+  it('diagonal()', function(){
+
+    var x = [ 1, 2, 3 ];
+
+    var A = Matrix.diagonal(x);
+
+    expect(A.elements()).to.deep.equal([
+      [1, 0, 0],
+      [0, 2, 0],
+      [0, 0, 3]
+    ]);
+
+  });
+
   it('transpose()', function(){
 
     var A = new Matrix([
