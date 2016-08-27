@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/storylog/milker/issues"
   },
-  "homepage": "https://github.com/storylog/milker#readme"
+  "homepage": "https://github.com/storylog/milker#readme",
+  "devDependencies": {
+    "chai": "^3.5.0"
+  }
 }
