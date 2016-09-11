@@ -83,8 +83,77 @@ describe('Matrix', function(){
 
   });
 
-  it('product()', function(){
+  it('add()', function(){
 
+    var A = new Matrix([
+      [ 1, 3 ],
+      [ 1, 0 ],
+      [ 1, 2 ]
+    ]);
+
+    var B = new Matrix([
+      [ 0, 0 ],
+      [ 7, 5 ],
+      [ 2, 1 ]
+    ]);
+
+    var AB = A.add(B);
+    var BA = B.add(A);
+
+    expect(AB.elements()).to.deep.equal(BA.elements());
+    expect(AB.elements()).to.deep.equal([
+      [ 1, 3 ],
+      [ 8, 5 ],
+      [ 3, 3 ]
+    ]);
+
+  });
+
+  it('subtract()', function(){
+    var A = new Matrix([
+      [ 1, 3 ],
+      [ 1, 0 ],
+      [ 1, 2 ]
+    ]);
+
+    var B = new Matrix([
+      [ 0, 0 ],
+      [ 7, 5 ],
+      [ 2, 1 ]
+    ]);
+
+    var AB = A.subtract(B);
+    var BA = B.subtract(A);
+
+    expect(AB.elements()).to.deep.equal([
+      [ 1, 3 ],
+      [ -6, -5 ],
+      [ -1, 1 ]
+    ]);
+
+    expect(BA.elements()).to.deep.equal([
+      [ -1, -3 ],
+      [ 6, 5 ],
+      [ 1, -1 ]
+    ]);
+
+  });
+
+  it('x()', function(){
+    var A = new Matrix([
+      [ 1, 2 ],
+      [ 3, 4 ],
+      [ 5, 6 ]
+    ]);
+    var M = A.x(10);
+    expect(M.elements()).to.deep.equal([
+      [ 10, 20 ],
+      [ 30, 40 ],
+      [ 50, 60 ]
+    ]);
+  });
+
+  it('product()', function(){
     var A = new Matrix([
       [ 1, 2 ],
       [ 3, 4 ],
