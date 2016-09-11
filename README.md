@@ -4,10 +4,10 @@ High performance matrix library for Node.js
 ## Installation
     $ npm install milker
 
-    ## Example
-
+## API
+### Creating a matrix
 ```js
-var m1 = Matrix([
+var A = Matrix([
   [1, 2, 3],
   [4, 5, 6]
 ]);
