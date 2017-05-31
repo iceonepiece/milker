@@ -1,14 +1,14 @@
 {
   "name": "milker",
-  "version": "1.2.0",
-  "description": "High performance matrix library for Node.js",
+  "version": "1.3.0",
+  "description": "A very amazing matrix library for Node.js",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/storylog/milker.git"
+    "url": "git+https://github.com/iceonepiece/milker.git"
   },
   "keywords": [
     "matrix"
@@ -16,10 +16,13 @@
   "author": "Jaratrawee Deekhueankhan <ice@storylog.co>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/storylog/milker/issues"
+    "url": "https://github.com/iceonepiece/milker/issues"
   },
-  "homepage": "https://github.com/storylog/milker#readme",
+  "homepage": "https://github.com/iceonepiece/milker#readme",
   "devDependencies": {
     "chai": "^3.5.0"
+  },
+  "dependencies": {
+    "linear-solve": "^1.0.0"
   }
 }

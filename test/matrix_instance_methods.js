@@ -2,8 +2,8 @@
 var expect = require('chai').expect;
 var Matrix = require('../').Matrix;
 
-describe('Matrix', function(){
-  it('new Matrix()', function(){
+describe('Matrix - instance methods', function(){
+  it('new Matrix() : Matrix', function(){
 
     var A = new Matrix([
       [ 1, 2, 3 ],
@@ -25,7 +25,7 @@ describe('Matrix', function(){
 
   });
 
-  it('get()', function(){
+  it('get(row, col) : Number', function(){
 
     var A = new Matrix([
       [ 1, 2 ],
@@ -37,7 +37,7 @@ describe('Matrix', function(){
 
   });
 
-  it('set()', function(){
+  it('set(row, col, val)', function(){
 
     var A = new Matrix([
       [ 1, 2 ],
@@ -52,21 +52,21 @@ describe('Matrix', function(){
 
   });
 
-  it('diagonal()', function(){
-
-    var x = [ 1, 2, 3 ];
-
-    var A = Matrix.diagonal(x);
-
-    expect(A.elements()).to.deep.equal([
-      [1, 0, 0],
-      [0, 2, 0],
-      [0, 0, 3]
+  it('verticalSum() : Array', () => {
+    var A = new Matrix([
+      [ 1, 1, 1, 0, 0 ],
+      [ 0, 1, 1, 1, 0 ],
+      [ 0, 1, 1, 1, 0 ],
+      [ 0, 1, 0, 0, 0 ]
     ]);
+
+    var result = A.verticalSum();
+
+    expect(result).to.deep.equal([ 1, 4, 3, 2, 0 ]);
 
   });
 
-  it('transpose()', function(){
+  it('transpose() : Matrix', function(){
 
     var A = new Matrix([
       [ 1, 2 ],
@@ -83,7 +83,29 @@ describe('Matrix', function(){
 
   });
 
-  it('add()', function(){
+  it('inverse() : Matrix', function(){
+
+    var A = new Matrix([
+      [ 2, 0 ],
+      [ 0, 2 ]
+    ]);
+
+    var AInv = A.inverse();
+    var AI = A.product(AInv);
+
+    expect(AI.elements()).to.deep.equal([
+      [ 1, 0 ],
+      [ 0, 1 ]
+    ]);
+
+    expect(AInv.elements()).to.deep.equal([
+      [ 0.5, 0 ],
+      [ 0, 0.5 ]
+    ]);
+
+  });
+
+  it('add(m) : Matrix', function(){
 
     var A = new Matrix([
       [ 1, 3 ],
@@ -109,7 +131,7 @@ describe('Matrix', function(){
 
   });
 
-  it('subtract()', function(){
+  it('subtract(m) : Matrix', function(){
     var A = new Matrix([
       [ 1, 3 ],
       [ 1, 0 ],
@@ -139,7 +161,7 @@ describe('Matrix', function(){
 
   });
 
-  it('x()', function(){
+  it('x(n) : Matrix', function(){
     var A = new Matrix([
       [ 1, 2 ],
       [ 3, 4 ],
@@ -153,7 +175,7 @@ describe('Matrix', function(){
     ]);
   });
 
-  it('product()', function(){
+  it('product(m) : Matrix', function(){
     var A = new Matrix([
       [ 1, 2 ],
       [ 3, 4 ],

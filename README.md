@@ -1,5 +1,5 @@
 # milker
-High performance matrix library for Node.js
+A very amazing matrix library for Node.js
 
 ## Installation
     $ npm install milker
@@ -26,6 +26,9 @@ var C = Matrix([
   [0, 1]
 ]);
 
+A.transpose();
 A.add(B);
-A.x(C); 
+A.subtract(B);
+A.product(C);
+
 ```
