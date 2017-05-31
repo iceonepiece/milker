@@ -10,17 +10,17 @@ A very amazing matrix library for Node.js
 var milker = require('milker');
 var Matrix = milker.Matrix;
 
-var A = Matrix([
+var A = new Matrix([
   [1, 2, 3],
   [4, 5, 6]
 ]);
 
-var B = Matrix([
+var B = new Matrix([
   [1, 1, 1],
   [1, 1, 1]
 ]);
 
-var C = Matrix([
+var C = new Matrix([
   [0, 1],
   [1, 0],
   [0, 1]
