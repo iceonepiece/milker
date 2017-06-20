@@ -106,4 +106,40 @@ describe('SparseMatrix - instance methods', function(){
 
   });
 
+  it('transpose() : SparseMatrix', function(){
+
+    const inputMatrixA = [
+      [ 9,  0, 0 ],
+      [ 0, 11, 0 ],
+      [ 1,  1, 0 ],
+      [ 1,  0, 0 ]
+    ];
+
+    const A = new SparseMatrix(inputMatrixA);
+    const At = A.transpose();
+
+    expect(At.elements()).to.deep.equal({
+      values:         [ 9, 1, 1, 11, 1 ],
+      columnIndices:  [ 0, 2, 3, 1, 2 ],
+      rowPointers:    [ 0, 3, 5, 5 ],
+    });
+
+    const inputMatrixB = [
+        [ 1, 0, 2, 0 ],
+        [ 0, 0, 0, 0 ],
+        [ 3, 0, 0, 0 ],
+        [ 1, 0, 0, 4 ]
+    ];
+
+    const B = new SparseMatrix(inputMatrixB);
+    const Bt = B.transpose();
+
+    expect(Bt.elements()).to.deep.equal({
+      values:         [ 1, 3, 1, 2, 4 ],
+      columnIndices:  [ 0, 2, 3, 0, 3 ],
+      rowPointers:    [ 0, 3, 3, 4, 5 ],
+    });
+
+  });
+
 });
