@@ -16,6 +16,8 @@ describe('SparseMatrix - instance methods', function(){
 
     const A = new SparseMatrix(inputMatrixA);
 
+    expect(A.rows()).to.equal(4);
+    expect(A.cols()).to.equal(4);
     expect(A.elements()).to.deep.equal({
       values:         [1, 2, 1, 3, 4, 9, 5, 1, 2, 1, 2, 7],
       columnIndices:  [0, 2, 3, 1, 2, 3, 0, 1, 2, 3, 0, 3],
@@ -31,6 +33,8 @@ describe('SparseMatrix - instance methods', function(){
 
     const B = new SparseMatrix(inputMatrixB);
 
+    expect(B.rows()).to.equal(4);
+    expect(B.cols()).to.equal(4);
     expect(B.elements()).to.deep.equal({
       values:         [1, 2, 3, 1, 4],
       columnIndices:  [0, 2, 0, 0, 3],
@@ -46,6 +50,8 @@ describe('SparseMatrix - instance methods', function(){
 
     const C = new SparseMatrix(inputMatrixC);
 
+    expect(C.rows()).to.equal(4);
+    expect(C.cols()).to.equal(6);
     expect(C.elements()).to.deep.equal({
       values:         [10, 20, 30, 40, 50, 60, 70, 80],
       columnIndices:  [ 0,  1,  1,  3,  2,  3,  4,  5],
@@ -118,6 +124,8 @@ describe('SparseMatrix - instance methods', function(){
     const A = new SparseMatrix(inputMatrixA);
     const At = A.transpose();
 
+    expect(At.rows()).to.equal(3);
+    expect(At.cols()).to.equal(4);
     expect(At.elements()).to.deep.equal({
       values:         [ 9, 1, 1, 11, 1 ],
       columnIndices:  [ 0, 2, 3, 1, 2 ],
@@ -134,6 +142,8 @@ describe('SparseMatrix - instance methods', function(){
     const B = new SparseMatrix(inputMatrixB);
     const Bt = B.transpose();
 
+    expect(Bt.rows()).to.equal(4);
+    expect(Bt.cols()).to.equal(4);
     expect(Bt.elements()).to.deep.equal({
       values:         [ 1, 3, 1, 2, 4 ],
       columnIndices:  [ 0, 2, 3, 0, 3 ],

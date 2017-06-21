@@ -1,6 +1,6 @@
 {
   "name": "milker",
-  "version": "1.4.2",
+  "version": "1.4.3",
   "description": "A very amazing matrix library for Node.js",
   "main": "index.js",
   "scripts": {
